@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const chalk = require('chalk'); // node高亮输出内容
 const ConsoleLogOnBuildWebpackPlugin = require('./plugins/ConsoleLogOnBuildWebpackPlugin');
+const marked = require("marked");
+const renderer = new marked.Renderer();
 
 console.log(chalk.bold.green('Hello world!'));
 
@@ -40,6 +42,19 @@ module.exports = {
         // https://webpack.docschina.org/configuration/module/#modulenoparse
         // noParse: /jquery|lodash/, // 防止 webpack 解析那些任何与给定正则表达式相匹配的文件
         rules: [
+            // 'transform-runtime' 插件告诉 Babel
+            // 要引用 runtime 来代替注入。
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                        plugins: ['@babel/plugin-transform-runtime']
+                    }
+                }
+            },
             // {
             //     test: /\.tsx?$/,
             //     use: 'ts-loader',
@@ -105,6 +120,21 @@ module.exports = {
             //         filename: 'static/[name].[hash:8][ext][query]'
             //     }
             // },
+            // 将 Markdown 编译为 HTML
+            {
+                test: /\.md$/,
+                use: [{
+                        loader: "html-loader"
+                    },
+                    {
+                        loader: "markdown-loader",
+                        options: {
+                            pedantic: true,
+                            renderer
+                        }
+                    }
+                ]
+            },
             {
                 test: /\.(csv|tsv)$/i,
                 use: ['csv-loader'],

@@ -3,6 +3,7 @@ import _ from 'lodash';
 // import printMe from './print';
 import "./iconfont";
 import example from '@/example.txt'
+import markdownText from '@/test-markdown.md'
 import {
     cube,
     testLog
@@ -76,6 +77,8 @@ function component() {
 }
 
 document.body.appendChild(component());
+
+document.querySelector('.markdown-container').innerHTML = markdownText
 
 import( /* webpackChunkName: "dynamic-import-module" */ './dynamic-import-module')
 

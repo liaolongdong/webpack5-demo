@@ -48,11 +48,13 @@ module.exports = {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: [{
+                    // https://webpack.docschina.org/loaders/cache-loader/
                     loader: 'cache-loader'
                 }, {
 
                     loader: 'babel-loader',
                     options: {
+                        // cacheDirectory: true, // 将转译的结果缓存到文件系统中
                         presets: ['@babel/preset-env'],
                         plugins: ['@babel/plugin-transform-runtime']
                     }

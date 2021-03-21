@@ -47,13 +47,16 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                use: {
+                use: [{
+                    loader: 'cache-loader'
+                }, {
+
                     loader: 'babel-loader',
                     options: {
                         presets: ['@babel/preset-env'],
                         plugins: ['@babel/plugin-transform-runtime']
                     }
-                }
+                }]
             },
             // {
             //     test: /\.tsx?$/,

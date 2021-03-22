@@ -8,12 +8,17 @@ const ConsoleLogOnBuildWebpackPlugin = require('./plugins/ConsoleLogOnBuildWebpa
 const marked = require("marked");
 const renderer = new marked.Renderer();
 
-console.log(chalk.bold.green('Hello world!'));
+const isProductionMode = process.env.NODE_ENV === "production";
+
+console.log(chalk.bold.green('hello word'));
+console.log(chalk.bold.green('current environment is', process.env.NODE_ENV));
 
 // 尝试使用环境变量，否则使用根路径
 const ASSET_PATH = process.env.ASSET_PATH || '/';
 
 module.exports = {
+    // https://webpack.docschina.org/configuration/mode/
+    mode: isProductionMode ? "production" : "development",
     //详见 https://webpack.docschina.org/configuration/entry-context/#entry
     entry: {
         // polyfills: './src/polyfills',
@@ -66,38 +71,30 @@ module.exports = {
             //     exclude: /node_modules/,
             // },
             {
-                test: /\.scss$/,
-                use: [
-                    // fallback to style-loader in development
-                    process.env.NODE_ENV !== 'production' ?
-                    'style-loader' :
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'sass-loader',
-                ],
-                include: [
-                    path.resolve(__dirname, "src")
-                ],
-            },
-            {
                 test: /\.css$/i,
                 // use: ['style-loader', 'css-loader'],
                 use: [
                     // fallback to style-loader in development
-                    process.env.NODE_ENV !== 'production' ?
-                    'style-loader' :
-                    MiniCssExtractPlugin.loader,
+                    isProductionMode ? MiniCssExtractPlugin.loader : "style-loader",
                     'css-loader',
+                ],
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    isProductionMode ? MiniCssExtractPlugin.loader : "style-loader",
+                    "css-loader",
+                    "sass-loader"
                 ],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
             },
-            {
-                test: /\.svg/,
-                type: 'asset/inline',
-            },
+            // {
+            //     test: /\.svg/,
+            //     type: 'asset/inline',
+            // },
             {
                 test: /\.txt/,
                 type: 'asset/source',
@@ -159,6 +156,9 @@ module.exports = {
         // 这可以帮助我们在代码中安全地使用环境变量
         new webpack.DefinePlugin({
             'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH),
+        }),
+        new MiniCssExtractPlugin({
+            filename: isProductionMode ? "[name].[contenthash:8].css" : "[name].css",
         }),
         // https://webpack.docschina.org/guides/shimming/
         // new webpack.ProvidePlugin({

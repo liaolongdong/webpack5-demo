@@ -8,7 +8,8 @@ import {
     cube,
     testLog
 } from './math.js';
-import './style.css';
+// import './style.css';
+import './style.scss';
 // import Icon from './photo.jpeg';
 // import jsonData from './data.json'
 // import xmlData from './data.xml'

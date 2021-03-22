@@ -12,10 +12,6 @@ body {
     background: url('./photo.jpeg');
 }
 
-@value v-primary: blue;
-@value s-black: black-selector;
-@value m-large: (min-width: 960px);
-
 .icon {
     width: 1em;
     height: 1em;
@@ -30,6 +26,8 @@ body {
     background: url('./photo.jpeg');
 } */
 
+$btnColor: blue;
+
 button {
-    color: v-primary;
+    color: $btnColor;
 }

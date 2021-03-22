@@ -15,6 +15,10 @@ import './style.scss';
 // import xmlData from './data.xml'
 // import csvData from './data.csv'
 
+if (process.env.NODE_ENV) { // 判断运行环境
+    console.log(`%cLooks like we are in ${process.env.NODE_ENV} mode!`, 'color: green;font-weight: bold');
+}
+
 // console.log('jsonData:', jsonData);
 // console.log('xmlData:', xmlData);
 // console.log('csvData:', csvData);
@@ -32,10 +36,6 @@ console.log('__dirname', __dirname);
 console.log('__filename', __filename);
 
 // a.fn();
-
-if (process.env.NODE_ENV) { // 判断运行环境
-    console.log(`%cLooks like we are in ${process.env.NODE_ENV} mode!`, 'color: green;font-weight: bold');
-}
 
 function component() {
     const element = document.createElement('div');

@@ -1,3 +1,13 @@
+// setting.json
 {
-    "compile-hero.disable-compile-files-on-did-save-code": true
+    "eslint.validate": [
+        "javascript",
+        "typescript",
+        "javascriptreact",     
+        "typescriptreact"
+    ],
+    // 文件保存自动调用eslint --fix
+    "editor.codeActionOnSave": {
+        "source.fixAll.eslint": true
+    }
 }

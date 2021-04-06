@@ -214,9 +214,11 @@ module.exports = {
     // target: "browserslist", // use browserslist
     // target: ["web", "es5"], // combining targets
     stats: {
-        assetsSort: '!size',
-        builtAt: true,
-        // 告知 stats 是否展示 --env 信息.
-        env: true,
+        // assets: true, // 是否展示资源信息
+        // assetsSort: 'size', // 基于给定的字段对资源进行排序
+        // chunksSort: 'size', // 基于给定的字段给 chunks 排序
+        builtAt: true, // 是否展示构建时间
+        // env: true, // 是否展示 --env 信息
+        // logging: 'info',
     },
 };

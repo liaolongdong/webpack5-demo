@@ -219,6 +219,6 @@ module.exports = {
         // chunksSort: 'size', // 基于给定的字段给 chunks 排序
         builtAt: true, // 是否展示构建时间
         // env: true, // 是否展示 --env 信息
-        // logging: 'info',
+        logging: 'info',
     },
 };

@@ -9,5 +9,6 @@
     // 文件保存自动调用eslint --fix
     "editor.codeActionOnSave": {
         "source.fixAll.eslint": true
-    }
+    },
+    "editor.tabSize": 2
 }

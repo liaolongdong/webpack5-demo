@@ -24,7 +24,7 @@ if (versionStr.indexOf(commit) != -1) {
     let email = execSync('git show -s --format=%ce').toString().trim(); //邮箱
     let date = new Date(execSync('git show -s --format=%cd').toString()); //日期
     let message = execSync('git show -s --format=%s').toString().trim(); //说明
-    versionStr = `当前分支: ${currentGitBranch}\ncommitId: ${commit}\n作者: ${name}<${email}>\n日期: ${date.getFullYear()+'-'+(date.getMonth()+1)+'-'+(date.getDate() > 9 ? date.getDate() : 0 + date.getDate())+' '+date.getHours()+':'+date.getMinutes()}\n说明: ${message}\n${new Array(80).join('*')}\n`;
+    versionStr = `当前分支: ${currentGitBranch}\ncommitId: ${commit}\n作者: ${name}<${email}>\n日期: ${date.getFullYear()+'-'+(date.getMonth()+1)+'-'+(date.getDate() > 9 ? date.getDate() : '0' + date.getDate())+' '+date.getHours()+':'+date.getMinutes()}\n说明: ${message}\n${new Array(80).join('*')}\n`;
     fs.writeFileSync(versionPath, versionStr);
     // 写入版本信息之后，自动将版本信息提交到当前分支的git上
     if (autoPush) {

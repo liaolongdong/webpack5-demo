@@ -4,7 +4,7 @@ const execSync = require('child_process').execSync; //同步子进程
 const fs = require('fs'); //文件读取模块
 const gitInfoPath = 'gitInfo.txt'; //gitInfo路径
 const buildPath = 'dist'; //打包的路径
-const autoPush = true; //写入版本信息之后是否自动提交git上
+const autoPush = false; //写入版本信息之后是否自动提交git上
 const commit = execSync('git show -s --format=%H').toString().trim(); //当前提交的版本号
  
 /**程序开始**/

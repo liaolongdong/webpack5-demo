@@ -12,7 +12,7 @@ module.exports = merge(common, {
     devServer: {
         contentBase: './dist',
         host: '0.0.0.0', // 设置本地可以通过ip地址访问
-        port: 8080, // 设置端口号
+        port: 8086, // 设置端口号
         hot: true, // 启用热模块替换
         open: true, // 服务启动后是否打开浏览器
         // openPage: ['/different/page1', '/different/page2'], // 指定打开浏览器时要浏览的页面

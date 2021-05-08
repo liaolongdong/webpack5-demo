@@ -20,3 +20,10 @@ git commit -m refactor: msg
 # 移出某种特性 后面加个 ! 号
 git commit -m feat!: msg
 ```
+
+## 修改提交记录
+
+```bash
+# 修改提交记录
+git commit --amend
+```

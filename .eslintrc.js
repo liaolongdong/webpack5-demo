@@ -1,21 +1,28 @@
-// .eslintrc.js
 module.exports = {
-	env: {
-            browser: true,
-            node: true
-	},
-    // ts解析器
-	parser: '@typescript-eslint/parser', 
-	extends: [
-            'eslint:recommended', 
-            'plugin:@typescript-eslint/recommended', 
-            'plugin:prettier/recommended'
-        ], // 增加Prettier的核心规则
-        plugins: ['@typescript-eslint'], 
-	rules: {
-            // semi: ["error", "always"],
-            // quotes: ["error", "double"],
-            '@typescript-eslint/no-explicit-any': 'error',
-	},
-}
-
+    root: true,
+    parserOptions: {
+      parser: require.resolve('babel-eslint'),
+      ecmaVersion: 2018,
+      sourceType: 'module'
+    },
+    env: {
+      es6: true,
+      node: true,
+      browser: true
+    },
+    plugins: [
+      "flowtype"
+    ],
+    extends: [
+      "eslint:recommended",
+      // "plugin:flowtype/recommended"
+    ],
+    globals: {
+      "loadsh": true,
+    },
+    rules: {
+      'no-console': process.env.NODE_ENV !== 'production' ? 0 : 2,
+      'no-useless-escape': 0,
+      'no-empty': 0
+    }
+  }

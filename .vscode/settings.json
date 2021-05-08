@@ -1,21 +1,21 @@
 // setting.json
 {
-    "eslint.validate": [
-        "javascript",
-        "typescript",
-        "javascriptreact",     
-        "typescriptreact"
-    ],
-    // 文件保存自动调用eslint --fix
-    // 在.eslintrc.js中配置好prettier规则
-    "editor.codeActionOnSave": {
-        "source.fixAll.eslint": true
-    },
-    // 关闭自动格式化
-    "editor.defaultFormatter": null,
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+  // 文件保存自动调用eslint --fix
+  // 在.eslintrc.js中配置好prettier规则
+  "editor.codeActionOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // 关闭自动格式化
+  "editor.defaultFormatter": null,
 
-    // 文件的行尾插入一行
-    "files.insertFinalNewline": true,
+  // 文件的行尾插入一行
+  "files.insertFinalNewline": true,
 
-    "editor.tabSize": 2
+  "editor.tabSize": 2
 }

@@ -2,23 +2,28 @@
 
 ## 代码提交规范
 
+变量说明：
+
+- `<msg>` = `提交备注信息`
+
 ```bash
 # 新需求/新特性 注意英文 : 后面有一个空格
-git commit -m feat: msg
+# 示例：git commit -m 'feat: 新增搜索功能'
+git commit -m 'feat: <msg>'
 # 修复问题
-git commit -m fix: msg
+git commit -m 'fix: <msg>'
 # 文档类
-git commit -m docs: msg
+git commit -m 'docs: <msg>'
 # 工作流程
-git commit -m workflow: msg
+git commit -m 'workflow: <msg>'
 # 代码风格
-git commit -m style: msg
+git commit -m 'style: <msg>'
 # 其它琐事
-git commit -m chore: msg
+git commit -m 'chore: <msg>'
 # 重构
-git commit -m refactor: msg
+git commit -m 'refactor: <msg>'
 # 移出某种特性 后面加个 ! 号
-git commit -m feat!: msg
+git commit -m 'feat!: <msg>'
 ```
 
 ## 修改提交记录

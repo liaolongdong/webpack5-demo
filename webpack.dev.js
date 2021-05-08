@@ -7,7 +7,7 @@ module.exports = merge(common, {
     // https://webpack.docschina.org/configuration/mode/
     // mode: 'development',
     // 通过为浏览器调试工具提供极其详细的源映射的元信息来增强调试能力，但会牺牲构建速度。
-    devtool: 'inline-source-map',
+    devtool: 'inline-source-map', 
     // https://webpack.docschina.org/configuration/dev-server/
     devServer: {
         contentBase: './dist',

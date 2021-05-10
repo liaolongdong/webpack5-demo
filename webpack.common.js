@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 // const WorkboxPlugin = require('workbox-webpack-plugin'); // 可帮助我们更简单地为 web app 提供离线支持
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const chalk = require('chalk'); // node高亮输出内容
@@ -160,6 +161,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: isProductionMode ? "[name].[contenthash:8].css" : "[name].css",
         }),
+        new ESLintPlugin(),
         // https://webpack.docschina.org/guides/shimming/
         // new webpack.ProvidePlugin({
         //     _: 'lodash', // 导入全部

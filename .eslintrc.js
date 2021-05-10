@@ -10,9 +10,9 @@ module.exports = {
       node: true,
       browser: true
     },
-    plugins: [
-      "flowtype"
-    ],
+    // plugins: [
+    //   "flowtype"
+    // ],
     extends: [
       "eslint:recommended",
       // "plugin:flowtype/recommended"
@@ -22,6 +22,7 @@ module.exports = {
     },
     rules: {
       'no-console': process.env.NODE_ENV !== 'production' ? 0 : 2,
+      'no-unused-vars': 0,
       'no-useless-escape': 0,
       'no-empty': 0
     }

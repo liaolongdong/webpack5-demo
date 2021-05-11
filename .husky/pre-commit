@@ -4,3 +4,4 @@
 # npm test
 
 npm run lint:pre-commit
+npx lint-staged

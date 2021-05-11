@@ -41,3 +41,13 @@ git commit -m 'revert: feat: <msg>'
 # 修改提交记录
 git commit --amend
 ```
+
+## 跳过githooks提交信息验证校验
+
+跳过githooks提交信息验证校验(为了规范统一不推荐使用)
+
+commit-msg hook failed (add --no-verify to bypass)
+
+```bash
+git commit -m '跳过githooks提交信息验证校验' --no-verify
+```

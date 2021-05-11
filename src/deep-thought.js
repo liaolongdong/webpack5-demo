@@ -1,9 +1,5 @@
-self.onmessage = ({
-    data: {
-        question
-    }
-}) => {
-    self.postMessage({
-        answer: 42,
-    });
-};
+self.onmessage = ({ data: { question } }) => {
+  self.postMessage({
+    answer: 42,
+  })
+}

@@ -1,9 +1,16 @@
 // .prettierrc.js
 module.exports = {
-  semi: false,
-  trailingComma: 'all',
-  endOfLine: 'auto',
-  tabWidth: 2,
-  singleQuote: true
-  // ... 可参考官方配置
+  semi: false, // 是否加分号
+  trailingComma: 'all', // 尾随逗号
+  endOfLine: 'auto', // 行尾
+  tabWidth: 2, // tabl 2个空格
+  singleQuote: true, // 使用单引号
+  // 要为特定类型的文件指定处理器
+  overrides: [
+    // js文件使用flow规范
+    {
+      files: ['*.js'],
+      parser: 'flow',
+    },
+  ],
 }

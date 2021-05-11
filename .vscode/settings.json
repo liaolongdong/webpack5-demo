@@ -8,7 +8,7 @@
   ],
   // 文件保存自动调用eslint --fix
   // 在.eslintrc.js中配置好prettier规则
-  "editor.codeActionOnSave": {
+  "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
   // 关闭自动格式化

@@ -15,14 +15,12 @@
 
 // 使用async/await
 async function getComponent() {
-    const element = document.createElement('div');
-    const {
-        default: _
-    } = await import('lodash');
-    element.innerHTML = _.join(['Hello', 'webpack', '廖小新'], ' ');
-    return element;
+  const element = document.createElement('div')
+  const { default: _ } = await import('lodash')
+  element.innerHTML = _.join(['Hello', 'webpack', '廖小新'], ' ')
+  return element
 }
 
 getComponent().then((component) => {
-    document.body.appendChild(component);
-});
+  document.body.appendChild(component)
+})

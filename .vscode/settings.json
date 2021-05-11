@@ -16,6 +16,6 @@
 
   // 文件的行尾插入一行
   "files.insertFinalNewline": true,
-
+  // tab使用2个空格
   "editor.tabSize": 2
 }

@@ -1,7 +1,6 @@
-const {
-  merge
-} = require('webpack-merge');
-const common = require('./webpack.common.js');
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { merge } = require('webpack-merge')
+const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
   // https://webpack.docschina.org/configuration/mode/
@@ -31,9 +30,9 @@ module.exports = merge(common, {
         changeOrigin: true,
         // 如果不希望传递/api，则需要重写路径
         pathRewrite: {
-          '^/api': '/'
+          '^/api': '/',
         },
       },
     },
   },
-});
+})

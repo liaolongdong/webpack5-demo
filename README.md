@@ -19,7 +19,10 @@ npm run build
 
 - [x] 通过nodejs获取项目git信息
 - [ ] 使用eslint+prettier实现代码风格统一以及自动格式化
-- [ ] 使用husky规范commit提交记录
+- [x] 使用husky规范commit提交记录
 - [x] nginx容器化部署，实现打包一套代码，应用多套环境，比如，生产环境、UAT环境、测试环境、开发环境等
-- [ ] 使用typescript
-- [ ] 用jest集成单元测试
+- [ ] 集成typescript
+- [ ] 集成jest实现单元测试
+- [ ] 集成cypress实现自动化测试
+- [ ] 自定义埋点
+- [ ] 前端异常日志收集捕获

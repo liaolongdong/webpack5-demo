@@ -15,20 +15,14 @@
     "start:server": "http-server dist",
     "server": "node server.js",
     "getGitInfo": "node scripts/git/useNodeGetGitInfo.js",
-    "eslint": "eslint --fix src/**/* --fix --ext .js,.jsx,.ts,.tsx",
+    "eslint": "eslint --cache --fix",
     "lint": "git add . && npm run lint:pre-commit",
     "lint:pre-commit": "lint-staged --no-stash",
     "commit-msg": "node scripts/git/verifyCommitMsg.js",
     "prepare": "husky install"
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged",
-    "commit-msg": "node scripts/git/verifyCommitMsg.js"
-  },
   "lint-staged": {
-    "*.{js,ts,jsx,tsx,vue}": "eslint --fix",
-    "src/**/*": "eslint --fix src/**/* --fix --ext .js,.jsx,.ts,.tsx",
-    "*.js": "eslint --cache --fix"
+    "*.js": "eslint --cache --fix --max-warnings=0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",

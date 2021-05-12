@@ -4,7 +4,7 @@ import _ from 'lodash'
 import './iconfont'
 import example from '@/example.txt'
 import markdownText from '@/test-markdown.md'
-import { cube, testLog } from './math.js'
+// import { cube, testLog } from './math.js'
 // import './style.css';
 import './style.scss'
 // import Icon from './photo.jpeg';
@@ -65,7 +65,7 @@ function component() {
 
   // Note that because a network request is involved, some indication
   // of loading would need to be shown in a production-level site/app.
-  btn.onclick = (e) =>
+  btn.onclick = () =>
     import(/* webpackChunkName: "print" */ './print').then((module) => {
       // 注意当调用 ES6 模块的 import() 方法（引入模块）时，必须指向模块的 .default 值，因为它才是 promise 被处理后返回的实际的 module 对象。
       const print = module.default

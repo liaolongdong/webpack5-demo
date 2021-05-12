@@ -52,9 +52,11 @@ module.exports = {
   rules: {
     // 'no-console': process.env.NODE_ENV !== 'production' ? 0 : 2,
     'no-console': 0,
-    'no-unused-vars': 0,
+    'no-unused-vars': 1,
     'no-useless-escape': 0,
     'no-empty': 0,
+    '@typescript-eslint/no-unused-vars': 1,
+    '@typescript-eslint/explicit-module-boundary-types': 0,
   },
   // 要为特定类型的文件指定处理器
   overrides: [

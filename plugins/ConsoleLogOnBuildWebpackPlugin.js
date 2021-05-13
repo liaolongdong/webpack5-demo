@@ -1,10 +1,10 @@
-const pluginName = 'ConsoleLogOnBuildWebpackPlugin';
+const pluginName = 'ConsoleLogOnBuildWebpackPlugin'
 class ConsoleLogOnBuildWebpackPlugin {
-    apply(compiler) {
-        compiler.hooks.run.tap(pluginName, (compilation) => {
-            console.log(' webpack构建过程开始！');
-        });
-    }
+  apply(compiler) {
+    compiler.hooks.run.tap(pluginName, () => {
+      console.log(' webpack构建过程开始！')
+    })
+  }
 }
 
-module.exports = ConsoleLogOnBuildWebpackPlugin;
+module.exports = ConsoleLogOnBuildWebpackPlugin

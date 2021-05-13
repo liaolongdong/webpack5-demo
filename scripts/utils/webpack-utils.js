@@ -1,5 +1,5 @@
-const { isDev, isPro } = require("./env")
-const paths = require("../utils/paths")
+const { isDev, isPro } = require('./env')
+const paths = require('../utils/paths')
 
 // 入口配置
 exports.getEntry = () => {
@@ -14,12 +14,12 @@ exports.getOutput = () => {
     pathinfo: isDev,
   }
   if (isDev) {
-    obj.filename = "js/[name].bundle.js"
-    obj.chunkFilename = "js/[name].chunk.js"
+    obj.filename = 'js/[name].bundle.js'
+    obj.chunkFilename = 'js/[name].chunk.js'
   } else {
-    obj.filename = "js/[name].[contenthash:8].js"
-    obj.chunkFilename = "js/[name].[contenthash:8].chunk.js"
-    obj.publicPath = "/" // 使用绝对路径
+    obj.filename = 'js/[name].[contenthash:8].js'
+    obj.chunkFilename = 'js/[name].[contenthash:8].chunk.js'
+    obj.publicPath = '/' // 使用绝对路径
   }
   return obj
 }
@@ -27,9 +27,9 @@ exports.getOutput = () => {
 // resolve配置
 exports.getResolve = () => {
   return {
-    extensions: [".ts", ".tsx", ".js", ".jsx", ".vue", ".json"],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.vue', '.json'],
     alias: {
-      "@": paths.appSrc,
+      '@': paths.appSrc,
     },
   }
 }
@@ -39,14 +39,14 @@ exports.getEslintRule = () => {
   return {
     test: /\.(vue|(j|t)sx?)$/,
     exclude: /node_modules/,
-    enforce: "pre", // 优先执行
+    enforce: 'pre', // 优先执行
     use: [
       {
-        loader: require.resolve("eslint-loader"),
+        loader: require.resolve('eslint-loader'),
         options: {
           // cache: true,
           fix: false, // 自动修复源文件
-          eslintPath: require.resolve("eslint"),
+          eslintPath: require.resolve('eslint'),
           emitError: true,
         },
       },
@@ -61,14 +61,14 @@ exports.getTsRule = () => {
     include: paths.appSrc,
     use: [
       {
-        loader: require.resolve("babel-loader"),
+        loader: require.resolve('babel-loader'),
       },
       {
-        loader: require.resolve("ts-loader"),
+        loader: require.resolve('ts-loader'),
         options: {
           transpileOnly: true,
           happyPackMode: isPro, // 开启多线程打包
-          appendTsxSuffixTo: ["\\.vue$"],
+          appendTsxSuffixTo: ['\\.vue$'],
         },
       },
     ],
@@ -80,7 +80,7 @@ exports.getJsRule = () => {
   return {
     test: /\.(js|jsx)$/,
     include: paths.appSrc,
-    loader: require.resolve("babel-loader"),
+    loader: require.resolve('babel-loader'),
     options: {
       // This is a feature of `babel-loader` for webpack (not Babel itself).
       // It enables caching results in ./node_modules/.cache/babel-loader/
@@ -100,10 +100,10 @@ exports.getVueRule = () => {
     include: [paths.appSrc],
     use: [
       {
-        loader: require.resolve("vue-loader"),
+        loader: require.resolve('vue-loader'),
         options: {
           compilerOptions: {
-            whitespace: "condense",
+            whitespace: 'condense',
           },
         },
       },
@@ -114,35 +114,35 @@ exports.getVueRule = () => {
 // 处理less模块
 exports.getLessRule = () => {
   const miniCssLoader = {
-    loader: require("mini-css-extract-plugin").loader,
+    loader: require('mini-css-extract-plugin').loader,
     // options: {
     //   hmr: false,
     //   publicPath: "../",
     // },
   }
-  const styleLoader = { loader: require.resolve("style-loader") }
+  const styleLoader = { loader: require.resolve('style-loader') }
   const cssLoader = {
-    loader: require.resolve("css-loader"),
+    loader: require.resolve('css-loader'),
     options: {
       sourceMap: false,
       esModule: false,
       modules: {
-        localIdentName: "[name]_[local]_[hash:base64:5]",
+        localIdentName: '[name]_[local]_[hash:base64:5]',
       },
       importLoaders: 2,
     },
   }
   const postcssLoader = {
-    loader: require.resolve("postcss-loader"),
+    loader: require.resolve('postcss-loader'),
     options: {
       sourceMap: false,
       postcssOptions: {
-        plugins: [require("autoprefixer")()],
+        plugins: [require('autoprefixer')()],
       },
     },
   }
   const lessLoader = {
-    loader: require.resolve("less-loader"),
+    loader: require.resolve('less-loader'),
     options: {
       sourceMap: false,
     },
@@ -178,7 +178,7 @@ exports.getLessRule = () => {
         use: [
           isDev ? styleLoader : miniCssLoader,
           {
-            loader: require.resolve("css-loader"),
+            loader: require.resolve('css-loader'),
             options: {
               sourceMap: false,
               esModule: false,
@@ -204,10 +204,10 @@ exports.getSvgRule = () => {
         exclude: [paths.appSvg],
         use: [
           {
-            loader: require.resolve("babel-loader"),
+            loader: require.resolve('babel-loader'),
           },
           {
-            loader: require.resolve("vue-svg-loader"),
+            loader: require.resolve('vue-svg-loader'),
             options: {
               svgo: {
                 plugins: [
@@ -225,9 +225,9 @@ exports.getSvgRule = () => {
         include: [paths.appSvg],
         use: [
           {
-            loader: require.resolve("svg-sprite-loader"),
+            loader: require.resolve('svg-sprite-loader'),
             options: {
-              symbolId: "icon-[name]",
+              symbolId: 'icon-[name]',
               // extract: true, // 单独文件导出
               // spriteFilename: (svgPath) => `sprite${svgPath.substr(-4)}`,
             },
@@ -242,10 +242,10 @@ exports.getSvgRule = () => {
 exports.getImgRule = () => {
   return {
     test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-    loader: require.resolve("url-loader"),
+    loader: require.resolve('url-loader'),
     options: {
-      limit: "10000",
-      name: "static/media/[name].[hash:8].[ext]",
+      limit: '10000',
+      name: 'static/media/[name].[hash:8].[ext]',
     },
   }
 }
@@ -271,7 +271,7 @@ exports.getImgRule = () => {
 exports.getHtmlPlugin = () => {
   const options = {
     template: paths.appHtml,
-    inject: "body",
+    inject: 'body',
     // templateParameters: function() {
     // },
   }
@@ -290,5 +290,5 @@ exports.getHtmlPlugin = () => {
       // minifyURLs: false,
     })
   }
-  return new (require("html-webpack-plugin"))(options)
+  return new (require('html-webpack-plugin'))(options)
 }

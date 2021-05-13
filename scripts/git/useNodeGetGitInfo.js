@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+// 参考链接地址：https://blog.csdn.net/wang1006008051/article/details/103699669
 /**定义模块和变量**/
 // const exec = require('child_process').exec //异步子进程
 const execSync = require('child_process').execSync //同步子进程
@@ -78,6 +78,7 @@ if (fs.existsSync(buildPath)) {
 }
 
 // 程序执行结束
+// 字体参考链接地址：http://patorjk.com/software/taag/#p=testall&v=2&f=Graffiti&t=PERSAGY
 console.info(
   '\x1B[32m%s\x1b[0m',
   [

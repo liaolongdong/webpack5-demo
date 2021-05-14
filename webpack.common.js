@@ -217,6 +217,7 @@ module.exports = {
       // Utilities: path.resolve(__dirname, 'src/utilities/'),
       // Templates: path.resolve(__dirname, 'src/templates/'),
       '@': path.resolve(__dirname, 'src'), // @/ -> src/
+      resource: path.resolve(__dirname, 'resource'),
     },
   },
   // target: "browserslist", // use browserslist

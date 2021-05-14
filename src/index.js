@@ -2,15 +2,15 @@ import 'babel-polyfill'
 import _ from 'lodash'
 // import printMe from './print';
 import './iconfont'
-import example from '@/example.txt'
-import markdownText from '@/test-markdown.md'
+import example from 'resource/example.txt'
+import markdownText from 'resource/test-markdown.md'
 // import { cube, testLog } from './math.js'
 // import './style.css';
 import './style.scss'
 // import Icon from './photo.jpeg';
-// import jsonData from './data.json'
-// import xmlData from './data.xml'
-// import csvData from './data.csv'
+// import jsonData from 'resource/data.json'
+// import xmlData from 'resource/data.xml'
+import csvData from 'resource/data.csv'
 
 if (process.env.NODE_ENV) {
   // 判断运行环境
@@ -22,7 +22,7 @@ if (process.env.NODE_ENV) {
 
 // console.log('jsonData:', jsonData);
 // console.log('xmlData:', xmlData);
-// console.log('csvData:', csvData);
+console.log('csvData:', csvData)
 
 // testLog();
 

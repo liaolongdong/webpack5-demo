@@ -25,12 +25,33 @@ module.exports = merge(common, {
     proxy: {
       // 以/api字符串开头的接口请求，都代理到服务器接口请求地址，解决本地环境请求测试环境接口跨域问题
       // '/api': 'http://test-server-api.com'
-      '/api': {
-        target: 'http://test-server-api.com',
+      // '/api': {
+      //   target: 'http://test-server-api.com',
+      //   changeOrigin: true,
+      //   // 如果不希望传递/api，则需要重写路径
+      //   pathRewrite: {
+      //     '^/api': '/',
+      //   },
+      // },
+      '/fat': {
+        target: 'http://localhost:3100',
         changeOrigin: true,
-        // 如果不希望传递/api，则需要重写路径
         pathRewrite: {
-          '^/api': '/',
+          '^/fat': '/',
+        },
+      },
+      '/uat': {
+        target: 'http://localhost:3200',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/uat': '/',
+        },
+      },
+      '/pro': {
+        target: 'http://localhost:3300',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/pro': '/',
         },
       },
     },

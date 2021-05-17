@@ -17,6 +17,7 @@ npm run build
 
 ## 支持特性
 
+- [x] 使用axios请求数据
 - [x] 通过nodejs获取项目git信息
 - [x] 使用eslint + prettier实现代码风格校验统一以及保存自动格式化
 - [x] 使用husky规范commit提交记录

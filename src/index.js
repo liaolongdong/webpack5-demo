@@ -1,5 +1,7 @@
 import 'babel-polyfill'
 import _ from 'lodash'
+import request from '@/request'
+import { saveUserSetEnv, setTitleEnv } from '@/request/utils'
 // import printMe from './print';
 import './iconfont'
 import example from 'resource/example.txt'
@@ -18,6 +20,11 @@ if (process.env.NODE_ENV) {
     `%cLooks like we are in ${process.env.NODE_ENV} mode!`,
     'color: green;font-weight: bold',
   )
+}
+
+if (process.env.NODE_ENV !== 'production') {
+  saveUserSetEnv()
+  setTitleEnv()
 }
 
 // console.log('jsonData:', jsonData);
@@ -98,6 +105,15 @@ fetch('https://jsonplaceholder.typicode.com/users')
   .catch((error) =>
     console.error('Something went wrong when fetching this data: ', error),
   )
+
+request
+  .get('/user')
+  .then((data) => {
+    console.log(111, data)
+  })
+  .catch((err) => {
+    console.log(222, err)
+  })
 
 // if (module.hot) {
 //     module.hot.accept('./print.js', function () {

@@ -34,6 +34,7 @@
     "cache-loader": "^4.1.0",
     "css-loader": "^5.1.1",
     "csv-loader": "^3.0.3",
+    "cypress": "^7.3.0",
     "eslint": "^7.26.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
@@ -62,6 +63,7 @@
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "lodash": "^4.17.21",
     "whatwg-fetch": "^3.6.2"

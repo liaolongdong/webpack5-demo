@@ -33,6 +33,7 @@ module.exports = merge(common, {
       //     '^/api': '/',
       //   },
       // },
+      // 代理到模拟的fat环境
       '/fat': {
         target: 'http://localhost:3100',
         changeOrigin: true,
@@ -40,6 +41,7 @@ module.exports = merge(common, {
           '^/fat': '/',
         },
       },
+      // 代理到模拟的uat环境
       '/uat': {
         target: 'http://localhost:3200',
         changeOrigin: true,
@@ -47,6 +49,7 @@ module.exports = merge(common, {
           '^/uat': '/',
         },
       },
+      // 代理到模拟的pro环境
       '/pro': {
         target: 'http://localhost:3300',
         changeOrigin: true,

@@ -36,13 +36,13 @@ git remote add origin <url>
 git clone https://github.com/liaolongdong/vue-router.git
 ```
 
-2、然后增加源仓库
+2、然后增加上游源仓库
 
 ```bash
 git remote add upstream https://github.com/vuejs/vue-router.git  # (upstream 为源仓库名字，后面会使用到)git fetch upstream（获取源仓库信息） 
 ```
 
-3、然后拉取源仓库分支
+3、然后拉取上游源仓库分支
 
 ```bash
 git checkout -b branchName upstream/branchName #（branchName为分支名字）
@@ -62,7 +62,7 @@ git push origin branchName
 git checkout -b branchName origin/branchName
 ```
 
-2、拉取源仓库分支内容
+2、拉取上游源仓库分支内容
 
 ```bash
 git pull upstream branchName

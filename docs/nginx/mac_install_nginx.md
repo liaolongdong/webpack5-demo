@@ -19,6 +19,12 @@ Or, if you don't want/need a background service you can just run:
 which nginx
 # /usr/local/bin/nginx
 
+# 静态资源默认存放路径
+cd /usr/local/var/www
+
+# 查看nginx配置文件
+cat /usr/local/etc/nginx/nginx.conf
+
 # 启动nginx
 /usr/local/bin/nginx
 

@@ -51,7 +51,7 @@ module.exports = merge(common, {
       },
       // 代理到模拟的pro环境
       '/pro': {
-        target: 'http://localhost:3300',
+        target: 'http://localhost',
         changeOrigin: true,
         pathRewrite: {
           '^/pro': '/',

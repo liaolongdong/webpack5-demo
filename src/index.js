@@ -109,7 +109,10 @@ fetch('https://jsonplaceholder.typicode.com/users')
 request
   .get('/user')
   .then((data) => {
-    console.log(111, data)
+    console.log(
+      `%c环境配置测试对象：${JSON.stringify(data.data)}`,
+      'color:green;font-size:18px',
+    )
   })
   .catch((err) => {
     console.log(222, err)

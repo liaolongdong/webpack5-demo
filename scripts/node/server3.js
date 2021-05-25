@@ -1,7 +1,7 @@
 // 模拟pro环境
 const express = require('express')
 const app = express()
-const port = 3300
+const port = 80 // http默认端口
 
 app.get('/user', function (req, res) {
   res.send({

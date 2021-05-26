@@ -61,6 +61,20 @@ module.exports = {
   },
   // 要为特定类型的文件指定处理器
   overrides: [
+    // cypress测试文件
+    {
+      files: ['*.spec.js'],
+      parser: '@typescript-eslint/parser', //
+      extends: [
+        'plugin:@typescript-eslint/recommended', //ts的推荐规则
+        'plugin:cypress/recommended',
+      ],
+      rules: {
+        // strict: 'off',
+        'cypress/no-assigning-return-values': 0,
+        'cypress/no-unnecessary-waiting': 0,
+      },
+    },
     {
       files: ['*.js'],
       parser: 'babel-eslint',

@@ -8,6 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"warn: no test specified\"",
+    "cypress:open": "cypress open",
     "watch": "webpack --watch",
     "start": "webpack serve --node-env development --config webpack.dev.js",
     "dev": "webpack serve --node-env development --config webpack.dev.js",
@@ -22,7 +23,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "*.js": "eslint --cache --fix --max-warnings=0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",

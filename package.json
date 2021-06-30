@@ -26,7 +26,9 @@
     "*.js": "eslint --cache --fix --max-warnings=0"
   },
   "devDependencies": {
+    "@babel/code-frame": "^7.14.5",
     "@babel/core": "^7.13.10",
+    "@babel/plugin-proposal-numeric-separator": "^7.14.5",
     "@babel/plugin-transform-runtime": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
@@ -38,10 +40,10 @@
     "cypress": "^7.4.0",
     "eslint": "^7.26.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^7.9.0",
     "eslint-webpack-plugin": "^2.5.4",
-    "eslint-plugin-cypress": "^2.11.3",
     "express": "^4.17.1",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.0",

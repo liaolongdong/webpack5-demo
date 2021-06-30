@@ -23,7 +23,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix --max-warnings=0"
+    "*.js": "eslint --cache --fix --max-warnings=10"
   },
   "devDependencies": {
     "@babel/code-frame": "^7.14.5",

@@ -20,10 +20,13 @@ module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
 
-  return Object.assign({},config, {
+  return Object.assign({}, config, {
     baseUrl: 'http://localhost:8086',
     // pluginsFile: 'cypress/plugins/index.js',
     integrationFolder: './',
-    testFiles: ['cypress/integration/**/*.spec.js', 'src/**/__tests__/*.spec.js'],
+    testFiles: [
+      'cypress/integration/**/*.spec.js',
+      'src/**/__tests__/*.spec.js',
+    ],
   })
 }

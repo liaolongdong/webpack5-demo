@@ -23,3 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('login', (username = 'Better', password = 123456) => {
+  cy.log('custom command login')
+  cy.log(`login userInfo is : 
+  username:${username}, password: ${password}`)
+})

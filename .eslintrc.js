@@ -58,6 +58,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 1,
     '@typescript-eslint/no-var-requires': 0,
     '@typescript-eslint/explicit-module-boundary-types': 0,
+    'no-undef': 1,
   },
   // 要为特定类型的文件指定处理器
   overrides: [

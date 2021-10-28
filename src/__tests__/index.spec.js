@@ -1,7 +1,7 @@
 /*
  * @Author: liaolongdong
  * @Date: 2021-06-29 22:30:13
- * @LastEditTime: 2021-07-07 23:05:47
+ * @LastEditTime: 2021-07-16 18:02:11
  * @LastEditors: liaolongdong
  * @Description:
  * @FilePath: /webpack5-demo/src/__tests__/index.spec.js
@@ -12,17 +12,20 @@ describe('test index', () => {
   before('before', () => {
     cy.log('before')
     cy.login('廖小新', '666666')
+    cy.log(`getLocalStorage name: ${localStorage.getItem('name')}`)
   })
   beforeEach('beforeEach', () => {
     cy.log('beforeEach')
     Cypress.env('username', 'Better')
     cy.log(Cypress.env())
+    cy.restoreLocalStorage()
   })
   after('after', () => {
     cy.log('after')
   })
   afterEach('afterEach', () => {
     cy.log('afterEach')
+    cy.saveLocalStorage()
   })
   it('index', () => {
     cy.visit('/')

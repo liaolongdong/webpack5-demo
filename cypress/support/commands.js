@@ -29,3 +29,17 @@ Cypress.Commands.add('login', (username = 'Better', password = 123456) => {
   cy.log(`login userInfo is : 
   username:${username}, password: ${password}`)
 })
+
+let LOCAL_STORAGE_MEMORY = {}
+
+Cypress.Commands.add('saveLocalStorage', () => {
+  Object.keys(localStorage).forEach((key) => {
+    LOCAL_STORAGE_MEMORY[key] = localStorage[key]
+  })
+})
+
+Cypress.Commands.add('restoreLocalStorage', () => {
+  Object.keys(LOCAL_STORAGE_MEMORY).forEach((key) => {
+    localStorage.setItem(key, LOCAL_STORAGE_MEMORY[key])
+  })
+})

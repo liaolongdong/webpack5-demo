@@ -31,6 +31,8 @@ if (process.env.NODE_ENV !== 'production') {
 // console.log('xmlData:', xmlData);
 console.log('csvData:', csvData)
 
+localStorage.setItem('name', 'Better')
+
 // testLog();
 
 // console.log('__webpack_public_path__ ', __webpack_public_path__);

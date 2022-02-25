@@ -20,6 +20,7 @@
     "lint": "git add . && npm run lint:pre-commit",
     "lint:pre-commit": "lint-staged",
     "commit-msg": "node scripts/git/verifyCommitMsg.js",
+    "git-cmd": "node scripts/commander/git-cmd.js --source 123",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -69,6 +70,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
+    "commander": "^2.20.3",
     "lodash": "^4.17.21",
     "whatwg-fetch": "^3.6.2"
   }

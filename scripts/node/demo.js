@@ -1,11 +1,3 @@
-/*
- * @Author: liaolongdong
- * @Date: 2022-08-04 21:42:33
- * @LastEditTime: 2022-08-04 21:54:35
- * @LastEditors: liaolongdong
- * @Description:
- * @FilePath: /webpack5-demo/scripts/node/demo.js
- */
 const fs = require('fs')
 const { exec, spawn } = require('child_process')
 

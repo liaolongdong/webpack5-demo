@@ -1,7 +1,5 @@
 # webpack5-demo
 
-
-
 webpack5学习demo
 
 ## 项目启动和打包
@@ -19,11 +17,11 @@ npm run build
 
 ## 支持特性
 
-<!-- 
+<!--
 复选框
 
 - [x] ✅
-- [ ] ❌ 
+- [ ] ❌
 -->
 
 - ✅ 使用axios请求数据

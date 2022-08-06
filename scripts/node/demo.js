@@ -1,5 +1,6 @@
 const fs = require('fs')
 const { exec, spawn } = require('child_process')
+const chalk = require('chalk')
 
 console.log('__dirname', __dirname)
 console.log('process.cwd()', process.cwd())

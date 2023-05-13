@@ -3,7 +3,7 @@ module.exports = {
   semi: false, // 是否加分号
   trailingComma: 'all', // 尾随逗号
   endOfLine: 'auto', // 行尾
-  tabWidth: 2, // tabl 2个空格
+  tabWidth: 2, // tab 2个空格
   singleQuote: true, // 使用单引号
   // 要为特定类型的文件指定处理器
   overrides: [

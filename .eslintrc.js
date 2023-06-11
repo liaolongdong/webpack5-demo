@@ -1,4 +1,5 @@
 // 各参数配置 详见：http://eslint.cn/docs/user-guide/configuring
+
 module.exports = {
   // ESLint 一旦发现配置文件中有 "root": true，它就会停止在父级目录中寻找
   root: true,
